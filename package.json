@@ -1,0 +1,22 @@
+{
+  "name": "simplify_kmap_tabulation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "startn": "nodemon src/index.js",
+    "compile:sass": "sass --watch src/sass/main.scss public/css/styles.css",
+    "dev": "npm-run-all --parallel startn compile:sass"
+  },
+  "author": "Syed Jarullah Hisham",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.43.2"
+  }
+}
