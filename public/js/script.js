@@ -119,8 +119,8 @@ document.querySelector('.btn').addEventListener('click', (e) => {
         document.querySelector('.fetch__error').textContent = error;
         return;
     }
-    minterms.sort((a,b) => parseInt(a) - parseInt(b));
-    dontCares.sort((a,b) => parseInt(a) - parseInt(b));
+    minterms.sort((a, b) => parseInt(a) - parseInt(b));
+    dontCares.sort((a, b) => parseInt(a) - parseInt(b));
 
     let {
         rowArr,
@@ -164,10 +164,10 @@ document.querySelector('.btn').addEventListener('click', (e) => {
     }
 
     let QMTableValues = []
-    for(let j = 0; j< QMTable[0].length;j++) {
+    for (let j = 0; j < QMTable[0].length; j++) {
         let temp = []
         for (let i = 0; i < QMTable.length; i++) {
-            if(QMTable[i][j]) {
+            if (QMTable[i][j]) {
                 temp.push(QMTable[i][j]);
             }
         }

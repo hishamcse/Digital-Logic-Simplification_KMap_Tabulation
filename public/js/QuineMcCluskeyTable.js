@@ -37,6 +37,8 @@ const generateQMTable = (QMArr, PIs, inputNames, arrKMap) => {
 
 const generateCoverageTable = (PIs, EPIs, BinPIs, inputNames, KMapArr) => {
     let {binOneMinterms} = binaryTerms(inputNames.length, KMapArr);
+    binOneMinterms.sort((a, b) => parseInt(a, 2) - parseInt(b, 2))
+
     let combinedPIs = []
     for (let i = 0; i < PIs.length; i++) {
         let term = BinPIs[i]
