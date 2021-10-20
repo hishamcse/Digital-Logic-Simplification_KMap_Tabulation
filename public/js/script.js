@@ -123,6 +123,7 @@ document.querySelector('.btn').addEventListener('click', (e) => {
     dontCares.sort((a, b) => parseInt(a) - parseInt(b));
 
     let {
+        oneTerms,
         rowArr,
         colArr,
         KMapArr,
@@ -184,7 +185,7 @@ document.querySelector('.btn').addEventListener('click', (e) => {
     const combinedPIs = generateCoverageTable(PIs, EPIs, BinPIs, inputNames, KMapArr);
 
     const htmlCovering = Mustache.render($coverageTemplate, {
-        minterms, combinedPIs
+        minterms: oneTerms, combinedPIs
     })
 
     $kmap.insertAdjacentHTML('beforeend', htmlCovering);

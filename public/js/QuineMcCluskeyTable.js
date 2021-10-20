@@ -1,5 +1,5 @@
 import {countOnes, responsibleMinterms} from "./KMapSolver/PrimeImplicants.js"
-import {binaryTerms, createTerm} from "./KMapSolver/FinalSolver.js";
+import {binaryTerms, createSOPTerm} from "./KMapSolver/FinalSolver.js";
 
 const generateQMTable = (QMArr, PIs, inputNames, arrKMap) => {
     let {binAllTerms} = binaryTerms(inputNames.length, arrKMap);
@@ -16,7 +16,7 @@ const generateQMTable = (QMArr, PIs, inputNames, arrKMap) => {
             temp.forEach(term => {
                 let responsibleTerms = responsibleMinterms(binAllTerms, term);
                 decimalTerms = responsibleTerms.map(t => parseInt(t, 2));
-                const pt = createTerm(term, inputNames);
+                const pt = createSOPTerm(term, inputNames);
                 obj = {
                     term: term,
                     decimalMinterms: decimalTerms.join(', '),
