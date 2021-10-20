@@ -45,3 +45,16 @@ const userMinterms = [0,1,2,5,7,13,16,18,20,23,25,26,28,31,34,36,37,41,47,58]
 const userDontCares = []
 
 f(a, b, c, d, e, f) = a'b'de'f + a'bcd'e'f + a'bde'f' + a'bdef + b'c'd'ef' + ab'c'de' + ab'cd'e'f + ab'cdef + bcd'ef' + a'b'c'd'e' + a'b'c'df + a'c'd'f'
+
+test 7:
+
+const userInputVars = 5
+const userMinterms = [0, 1, 2 ,4, 5, 6, 7, 12, 31]
+const userDontCares = [16, 17, 20, 21]
+
+Prime Implicants:
+b'd', a'b'e', a'b'c, a'cd'e', abcde
+Essential Prime Implicants:
+b'd', a'b'e', a'b'c, a'cd'e', abcde
+Solution(Simplified):
+F(a, b, c, d, e) = b'd' + a'b'e' + a'b'c + a'cd'e' + abcde
