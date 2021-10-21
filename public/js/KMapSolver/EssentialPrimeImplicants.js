@@ -19,8 +19,6 @@ const findEPIs = (PIMaps, binOneMinterms) => {
 }
 
 const EPITermsConstruction = (binAllTerms, binOneMinterms, PIMaps) => {
-    // const EPIs = EPIMaps.map(mapTerm => mapTerm.term);
-    // console.log('EPIs: ', EPIs);
     return findEPIs(PIMaps, binOneMinterms);
 }
 
