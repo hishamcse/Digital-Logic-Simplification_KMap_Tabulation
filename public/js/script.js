@@ -131,7 +131,8 @@ document.querySelector('.btn').addEventListener('click', (e) => {
         BinPIs,
         PIs,
         EPIs,
-        solution
+        solution,
+        solutionColorArr
     } = solverFunc(inputNames.length, inputNames, minterms, dontCares, isSOP);
 
     // Render KMap
@@ -141,7 +142,14 @@ document.querySelector('.btn').addEventListener('click', (e) => {
 
     let combinedArr = [];
     for (let i = 0; i < rowArr.length; i++) {
-        const temp = [...KMapArr[i]];
+        const temp = [...KMapArr[i]]
+        temp.forEach(t => {
+            solutionColorArr.forEach(sol => {
+                if (t.binary === sol.binTerm) {
+                    t.color = sol.color
+                }
+            })
+        });
         combinedArr.push({
             rowName: rowArr[i],
             cellVals: temp

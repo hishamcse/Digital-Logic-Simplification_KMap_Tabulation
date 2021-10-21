@@ -3,6 +3,8 @@ import {PITermsConstruction} from "./PrimeImplicants.js";
 import {EPITermsConstruction} from "./EssentialPrimeImplicants.js";
 import {SolutionConstruction} from "./SolutionBuilder.js";
 
+const colors = ['primary', 'secondary', 'success', 'danger', 'info', 'warning']
+
 const binaryTerms = (inputVars, arrKMap) => {
     let binOneMinterms = []       // only '1' s
     let binDontCares = []         // only '-' s
@@ -79,6 +81,27 @@ const createSolutionPOS = (solutionTerms) => {
     return solution;
 }
 
+const createSolutionColors = (solutionMaps) => {
+    let solutionColorArr = [];
+    let j = 0;
+    solutionMaps.forEach(mapTerm => {
+        let arr = [...mapTerm.responsibleTerms];
+        arr.forEach(term => {
+            solutionColorArr.push({
+                binTerm: term,
+                color: colors[j]
+            })
+        });
+        if (j === 5) {
+            j = 0;
+        } else {
+            j++;
+        }
+    });
+
+    return solutionColorArr;
+}
+
 const solverFunc = (totalInputVars, inputNames, oneMinterms, dontCares, isSOP) => {
     let oneTerms = [], dontCareTerms;
     if (isSOP) {
@@ -120,7 +143,8 @@ const solverFunc = (totalInputVars, inputNames, oneMinterms, dontCares, isSOP) =
         BinPIs: PIMaps.map(mapTerm => mapTerm.term),
         PIs: PITerms,
         EPIs: EPITerms,
-        solution
+        solution,
+        solutionColorArr: createSolutionColors(solutionMaps)
     };
 }
 

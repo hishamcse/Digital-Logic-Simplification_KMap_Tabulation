@@ -28,7 +28,6 @@ const construct_KMap = (rowGreyCodes, colGreyCodes, oneMinterms, dontCares) => {
                 binary: `${rowNum}${colNum}`,
                 decimal: decimalNum,
                 value: val,
-                color: (val === '1') ? 'yes':undefined
             }
         }
     }

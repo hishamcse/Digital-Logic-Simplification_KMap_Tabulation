@@ -171,7 +171,7 @@
   <script id="kmap-template" type="text/html">
       <div class="container m-2 p-4 text-center">
           <h1 class="text-secondary pb-5">Karnaugh Map</h1>
-        <table class="table table-striped table-hover table-bordered table-light border-secondary">
+        <table class="table table-hover table-bordered table-light border-secondary">
           <thead>
           <tr>
               <th scope="col"><h2 class="text-secondary">({{rowInputNames}}) // ({{colInputNames}})</h2></th>
@@ -186,7 +186,7 @@
               <th scope="row">{{rowName}}</th>
               {{#cellVals}}
               {{#color}}
-              <td class="table-success">{{value}}</td>
+              <td class="table-{{color}}">{{value}}</td>
               {{/color}}
               {{^color}}
               <td>{{value}}</td>

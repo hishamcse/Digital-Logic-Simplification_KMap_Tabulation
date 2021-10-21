@@ -75,7 +75,7 @@ p a {
   background-color: #e9ecef;
 }
 
-.input-box {
+.input-box, .table-hover {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
